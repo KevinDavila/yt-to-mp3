@@ -3,7 +3,7 @@ from pytube import YouTube
 
 def Download(link):
     ytObject = YouTube(link)
-    ytObject = ytObject.streams.filter(progressive=True, file_extension='mp4')
+    ytObject = ytObject.streams.filter(progressive=True, file_extension='mp4').first()
     print(ytObject)
     try:
         ytObject.download()
